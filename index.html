@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>
+            Personal Training Register Page
+        </title>
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com"> 
+        <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;700&display=swap" rel="stylesheet">
+    </head>
+
+
+    <body>
+        <div class="container">
+            <div class="section-one">
+                <p>Personal Training and Fitness Classes</p>
+                <h1>Get back to feeling your best self</h1>
+                <p>Register to book your free consultation</p>
+            </div>
+
+            <div id ="main-content" class="section-two">
+
+                <h2  class="section-two-header">Start your fitness journey now!</h2>
+                <p class="section-two-subheader">Register Today</p>
+                <p class="section-two-para">Fitness and Health can be a complicated arena with information overload. One way 
+                    to navigate through the noise is to seek a professional. Register and get guidance and 
+                    coaching from one of our experts who can help you map out your fitness journey to achieve 
+                    your fitness potential
+                </p>
+
+                <form id= "email-collector" class= "email-collector" action="???" method="POST">
+                    <input name= "firstName" type="text" required placeholder="first name" aria-label="first name">
+                    <input name= "emailAddress" type="email" required placeholder="email" aria-label="email">
+                    <button id="form-button" class="form-button" type="submit">Register</button>
+                
+                </form>
+
+                <p class="fine-print">We'll never share your information without your permission</p>
+
+
+
+
+            </div>
+        </div>
+
+    <script>
+
+        let emailCollectorForm = document.getElementById("email-collector");
+        emailCollectorForm.addEventListener("submit", event => {
+            event.preventDefault()
+
+
+            let ourFormData = new FormData(event.target)
+
+            let userFirstName = ourFormData.get("firstName")
+
+            let updatedHtmlContent = `
+            
+            <h2>Congratulations, ${userFirstName}</h2>
+                
+                <p>You're on your way to planning your fitness journey.
+                We'll contact your within the next 24 hours to arrange a consultation 
+                </p>
+
+        
+                <p>We'll never share your information without your permission</p>`
+
+                let ourMainContent = document.getElementById("main-content");
+                ourMainContent.innerHTML = updatedHtmlContent;
+            
+
+
+        })
+
+
+
+    </script>
+
+     </body>
+
+
+</html>
